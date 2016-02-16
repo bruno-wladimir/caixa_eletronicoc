@@ -1,0 +1,273 @@
+/* Programa bancario !
+Algumas obs: O cliente precisa depositar um valor para abertura da conta, esse deposito caira na conta poupança do cliente
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <locale.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+using namespace std;
+
+// variaveis de cadastro
+struct login{
+char nome_correntista [200];
+char senha_cadastro[5];
+char senha_acesso[5];
+int cpf[30];
+int rg[20];
+int idade[20];
+int agencia_cadastro[20];
+int nconta_cadastro[20];
+};
+
+struct login Login;
+//selecao
+//char senha_cadastro[5];
+//char senha_acesso[5];
+char senha_c[5];
+char senha_a[5];
+
+int i;
+static int op;
+int selecao_inicial;
+// operaçoes
+float deposito, transferencia , saldo_Ccorrente , saldo_Cpoupanca ,agencia[20],nconta[20];
+
+
+//TELAS
+void menu_inicial(void);
+
+void tela_transferencia();
+void tela_deposito();
+
+void tela_extrato();
+void cadastro();
+void tela_login();
+
+
+int main(){
+setlocale(LC_ALL, "Portuguese");
+menu_inicial();  
+
+return 0;
+system("pause");
+}
+
+//INICIO
+
+void menu_inicial(){
+system("cls");
+system ("color 71");
+cout<<("Bem vindo!\n");
+cout<<("Informe uma das opções abaixo!\n");
+cout<<("0- Acessar correntista\n");
+cout<<("1- Para cadastro de novo correntista!\n");
+cout<<("2- Deposito \n");
+cout<<("5- sair\n");    
+cin>>selecao_inicial;
+system("cls");
+switch (selecao_inicial)
+{
+
+ 		
+		case 0:tela_login();
+		break;
+		
+		case 1:cadastro();
+		break;
+		
+		case 2:tela_deposito();
+		break;
+						
+//		case 4: sair ();
+		
+		
+		default:
+			cout<<("****************ERRO************\n");
+			cout<<("A opcao selecionada nao corresponde a nenhum item do menu de opcoes\n");
+			system("pause");
+			system("cls");
+			return menu_inicial();			
+}
+}
+
+//CADASTRO DO CORRENTISTA 
+void cadastro(){
+int opc_cadastro;
+
+do
+{
+cout<<("informe o nome do correntista!\n");
+fflush(stdin);
+gets(Login.nome_correntista);
+//cin>> Login.nome_correntista[40];
+cout<<("informe o CPF\n");
+cin>>Login.cpf[30];
+cout<<("informe o RG\n");
+cin>> Login.rg[20];
+cout<<("informe Sua idade\n");
+cin>>Login.idade[20];
+cout<<("informe um numero de agencia"); cin>>Login.agencia_cadastro[20];
+cout<<("informe um numero de conta	"); cin>>Login.nconta_cadastro[20];
+cout<<("informe uma senha de 5 digitos para cadastro"); cin>>Login.senha_cadastro;
+cout<<("INFORME UM VALOR A SER DEPOSITADO NA CONTA-POUPANÇA PARA PROSSEGUIR COM A ABERTURA DA CONTA !\n");
+cin>> deposito;
+saldo_Cpoupanca= deposito;
+system("cls");
+cout<<("CADASTRO REALIZADO COM SUCESSO!!!!!\n");
+cout<<("informe 1 para começar e qualquer outro numero para encerrar\n");
+cin>>opc_cadastro;
+}while (opc_cadastro ==1);
+system("cls");
+	return menu_inicial();
+
+}
+//TELA DE LOGIN
+void tela_login(){
+int opc_tela_login	;
+
+cout<<("informe sua agencia seguido da conta");
+cin>>agencia[20]; cin>>nconta[20];
+cout<<("informe a senh\n");
+cin>>senha_a;
+system("cls");
+if (agencia[20] == Login.agencia_cadastro[20] &&  nconta[20]== Login.nconta_cadastro[20] && Login.senha_acesso[5]==Login.senha_cadastro[5]){
+	cout<<"Bem vindo \n" << Login.nome_correntista ,"\n";
+	
+	cout<<("\n Informe uma das opções abaixo\n");
+	cout<<("1- Saldo\n");
+	cout<<("2- Transferencia\n");
+	cin>>opc_tela_login;
+	switch(opc_tela_login){
+		
+	case 1:tela_extrato();
+		break;
+		
+	case 2: tela_transferencia();
+		break;
+		
+	
+	}
+}
+else
+system("cls");
+cout<<("conta nao cadastrada\n");
+system("pause");
+system("cls");
+return menu_inicial();
+
+}
+
+
+//DEPOSITO
+void tela_deposito(){
+	int op_deposito;
+cout<<("******** BEM VINDO A TELA DE DEPOSITO!\n");
+cout<<("Pressione 1 para deposito em conta corrente e 2 para deposito em poupança\n");
+cin>>op_deposito;
+switch (op_deposito){
+		case 1:
+		cout<<("informe a agencia");
+		cin>>agencia[20];
+		cout<<("informe o numero da conta");
+		cin>>nconta[20];
+		cout<<("Informe o valor a ser depositado!");
+		cin>>deposito;
+		saldo_Ccorrente= (deposito) + (saldo_Ccorrente);
+		cout<<("*********-------------------------------********* \n");
+		cout<<("*********DEPOSITO REALIZADO COM SUCESSO********* \n");
+		cout<<("*********-------------------------------********* \n");
+		break;
+			case 2:
+			cout<<("Informe o valor a ser depositado!");
+			cin>>deposito;
+			saldo_Cpoupanca= deposito + saldo_Cpoupanca;
+			cout<<("*********-------------------------------********* \n");
+			cout<<("*********DEPOSITO REALIZADO COM SUCESSO********* \n");
+			cout<<("*********-------------------------------********* \n");
+			break;
+			
+				default:
+				cout<<("****************ERRO************\n");
+				cout<<("A opcao selecionada nao corresponde a nenhum item do menu de opcoes\n");
+				system("pause");
+				system("cls");
+				return tela_deposito();
+				
+}
+
+system("pause");
+	return menu_inicial();
+	
+	
+
+}
+
+void tela_extrato(){
+
+cout<<("*********-------------------------------************ \n");	
+cout<<("***********BEM VINDO A TELA DE EXTRATO ***************  \n");
+cout<<("*********-------------------------------************* \n");
+
+cout<<"Voce possui R$:"<<saldo_Ccorrente <<" em sua conta corrente\n";
+
+cout<<"Você possui R$:"<<saldo_Cpoupanca<<"Em sua puopança\n";
+cout<<("\n O nome do correntista é\n");
+cout<<Login.nome_correntista[40];
+system("pause");
+system("cls");
+return menu_inicial();
+
+	
+}
+
+void tela_transferencia(){
+
+int opc_transferencia;
+system ("cls");
+cout<<("*********-------------------------------************ \n");	
+cout<<("**********BEM VINDO A TELA DE Transferencia ***********");
+cout<<("*********-------------------------------************* \n");	
+cout<<("Informe o numero da conta seguido da agência!\n");
+cin>>nconta[20];
+cin>>agencia[20];
+cout<<("Informe o valor a ser depositado!\n");
+cin>>transferencia;
+if (transferencia > saldo_Ccorrente){
+
+	cout<<("Saldo insuficiente\n");
+	cout<<("pressione 1 para fazer a transferência de outro valor ou  2 se deseja voltar ao menu inicial \n");
+    cin>>opc_transferencia;
+    switch(opc_transferencia){
+    	case 1:return tela_transferencia();
+    	break;
+    	case 2: return menu_inicial();
+    	break;
+    }
+    
+
+}
+	
+else {
+
+saldo_Ccorrente= saldo_Ccorrente - transferencia;
+
+cout<<("Operecao realizada com sucesso\n");
+ return menu_inicial();
+
+}
+
+//ENCERRAR PROGRAMA
+
+
+}
+
+
+
