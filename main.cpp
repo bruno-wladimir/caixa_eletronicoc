@@ -1,14 +1,12 @@
 /*
 ============================================================================
-                            Caixa eletrônico                  19/07/2014   =
+                            Caixa eletrÃ´nico                  19/07/2014   =
 Nome :Bruno wladimir de Oliveira 							   		       =
 																		   =
-Versão :1.0															       =
+VersÃ£o :1.0															       =
 =============================================================================
 
 */
-
-
 #include <unistd.h>
 #include <iostream>   		#include <stdio.h>
 #include <cstdlib>			#include <conio.h>
@@ -35,7 +33,7 @@ int i;
 double tmp=0;
 int selecao;
 
-// VARIAVEIS DE OPERAÇOES
+// VARIAVEIS DE OPERAÃ‡OES
 
 struct operacoes{
 double deposito_conta_corrente, deposito_conta_poupanca , transferencia , saldo_Ccorrente , saldo_Cpoupanca , saque_Ccorrente ,saque_Cpoupanca;
@@ -77,12 +75,12 @@ cout<<("\t############################################################\n");
               cout<<("\t############################################################\n\n\n");
 
 					cout<<(" \1 \2\n");
-					cout<<("Informe uma das opções abaixo!\n \n");
+					cout<<("Informe uma das opÃ§Ãµes abaixo!\n \n");
 					cout<<("0- Acesso correntista\n \n");
 					cout<<("1- Para cadastro de novo correntista!\n \n");
 					cout<<("2- Deposito \n \n");
 					cout<<("3- sair:\n");cout<<("\n \n");
-					cout<<("Seleção:");
+					cout<<("SeleÃ§Ã£o:");
 					cout<<Login.senha_acesso;
 					cin>>selecao;
 system("cls");
@@ -108,7 +106,7 @@ switch (selecao)
 
 
 			cout<<("----------- ERRO ------------\n \n");
-			cout<<("A opcão selecionada não corresponde a nenhum item do menu de opcões\n \n");
+			cout<<("A opcÃ£o selecionada nÃ£o corresponde a nenhum item do menu de opcÃµes\n \n");
 			system("pause");
 			system("cls");
 			  menu_inicial();
@@ -143,7 +141,7 @@ cout<<("\t########################################################\n");
 				cin>>Login.nconta_cadastro[10]; cout<<("\n");
 				cout<<("informe uma senha de 5 digitos: ");
 				cin>>Login.senha_cadastro;	cout<<("\n");
-				cout<<"INFORME UM VALOR A SER DEPOSITADO NA CONTA-POUPANÇA PARA PROSSEGUIR COM A ABERTURA DA CONTA !\n \n";
+				cout<<"INFORME UM VALOR A SER DEPOSITADO NA CONTA-POUPANÃ‡A PARA PROSSEGUIR COM A ABERTURA DA CONTA !\n \n";
 				cout<<"R$";
 				cin>>tmp;
 				Operacoes.saldo_Cpoupanca= (tmp) + (Operacoes.saldo_Cpoupanca);
@@ -172,7 +170,7 @@ gotoxy(70,1); system ( "date /t" );gotoxy(73,2); system ( "time/t" );
 				cout<<("\n");
 				cout<<("2- A partir do numero da conta:  \n");
 				cout<<("\n");
-				cout<<("Seleção:\n");
+				cout<<("SeleÃ§Ã£o:\n");
 				cin>>selecao;
 cout<<("\n");
 switch (selecao){
@@ -194,7 +192,7 @@ switch (selecao){
 	   /*
 		else
 				system("cls");
-				cout<<("conta não cadastrada\n");
+				cout<<("conta nÃ£o cadastrada\n");
 				system("pause");
 				system("cls");
 				  menu_inicial();
@@ -230,16 +228,16 @@ cout<<("\t########################################################\n\n\n");
 
 		cout<<("Pessione!\n\n");
 		cout<<("1- Para deposito em conra corrente:\n \n");
-		cout<<("2- Para deposito em poupança:\n \n");
+		cout<<("2- Para deposito em poupanÃ§a:\n \n");
 		cout<<("3- Para voltar ao menu inicial:\n \n");
-		cout<<("seleção:");
+		cout<<("seleÃ§Ã£o:");
 		cin>>selecao;
 
 		switch (selecao){
 
 		case 1:
 		system("cls");gotoxy(11,2);
-		cout<<("----------- DEPÓSITO EM CONTA CORRENTE ------------\n \n");
+		cout<<("----------- DEPÃ“SITO EM CONTA CORRENTE ------------\n \n");
 		cout<<("Informe o numero da conta:");
 		cin>> tmp;
 		if (tmp== Login.nconta_cadastro[10]){
@@ -248,12 +246,12 @@ cout<<("\t########################################################\n\n\n");
 			Operacoes.saldo_Ccorrente= (tmp) + (Operacoes.saldo_Ccorrente);
 			system("cls");
 					gotoxy(15,2);
-					cout<<("----------- DEPÓSITO REALIZADO COM SUCESSO ------------\n \n");
+					cout<<("----------- DEPÃ“SITO REALIZADO COM SUCESSO ------------\n \n");
 			system("pause");
 			system("cls");
 
 	    	cout<<("Para continuar depositando pressione '1' e para voltar pressione qualquer valor \n");
-	    	cout<<"Seleção:";
+	    	cout<<"SeleÃ§Ã£o:";
 	    	cin>>tmp;
 
 		if (tmp==1){
@@ -268,14 +266,14 @@ cout<<("\t########################################################\n\n\n");
 			else
 				system("cls");
 				gotoxy(15,2);
-				cout<<("---------CONTA NÃO CADASTRADA NO SISTEMA-----------\n");
+				cout<<("---------CONTA NÃƒO CADASTRADA NO SISTEMA-----------\n");
 				system("pause");
 				  tela_deposito();
 
 			case 2:
 			system("cls");
 			gotoxy(11,2);
-			cout<<("----------- DEPÓSITO EM CONTA POUPANÇA ------------\n \n");
+			cout<<("----------- DEPÃ“SITO EM CONTA POUPANÃ‡A ------------\n \n");
 			cout<<("Informe o numero da conta:\n \n");gotoxy (27,4);
 			cin>>tmp;
 		if (tmp== Login.nconta_cadastro[10]){
@@ -285,9 +283,9 @@ cout<<("\t########################################################\n\n\n");
 		    Operacoes.saldo_Cpoupanca= tmp + Operacoes.saldo_Cpoupanca;
 		    system("cls");
 					gotoxy(15,2);
-					cout<<("----------- DEPÓSITO REALIZADO COM SUCESSO ------------\n\n");
+					cout<<("----------- DEPÃ“SITO REALIZADO COM SUCESSO ------------\n\n");
 			cout<<("Para continuar depositando pressione 1 e para voltar pressione qualquer valor\n \n");
-			cout<<"Seleção:";
+			cout<<"SeleÃ§Ã£o:";
 			cin>>tmp;
 		if(tmp==1){
 			  tela_deposito();
@@ -301,7 +299,7 @@ cout<<("\t########################################################\n\n\n");
 
 }	else
 	  			gotoxy(15,2);
-				cout<<("---------CONTA NÃO CADASTRADA NO SISTEMA-----------\n");
+				cout<<("---------CONTA NÃƒO CADASTRADA NO SISTEMA-----------\n");
 	 			system("pause");
 
 			case 3:
@@ -313,7 +311,7 @@ cout<<("\t########################################################\n\n\n");
 					system("cls");
 				gotoxy(25,2);
 				cout<<("----------- ERRO ------------\n \n");
-				cout<<("A opção selecionada não corresponde a nenhum item do menu de opcões\n \n");
+				cout<<("A opÃ§Ã£o selecionada nÃ£o corresponde a nenhum item do menu de opcÃµes\n \n");
 				system("pause");
 				system("cls");
 
@@ -336,8 +334,8 @@ system("cls");
        	cout<<("\t########################################################\n\n\n");
 		cout<<"Voce possui:\n \n";
 		cout<<"R$:"<<Operacoes.saldo_Ccorrente << ",00"<<" em sua conta corrente\n \n";
-		cout<<"Você possui:\n \n";
-		cout<<"R$:"<<Operacoes.saldo_Cpoupanca << ",00" <<"Em sua puopança\n \n";
+		cout<<"VocÃª possui:\n \n";
+		cout<<"R$:"<<Operacoes.saldo_Cpoupanca << ",00" <<"Em sua puopanÃ§a\n \n";
 				system("pause");
 				system("cls");
   menu_correntista();
@@ -354,7 +352,7 @@ system ("cls");
 
 gotoxy(70,1); system ( "date /t" );gotoxy(73,2); system ( "time/t" );
 cout<<("\t########################################################\n");
-cout<<("\t#                TELA DE TRANSFERÊNCIA                 #\n");
+cout<<("\t#                TELA DE TRANSFERÃŠNCIA                 #\n");
 cout<<("\t#                                                      #\n");
 cout<<("\t########################################################\n\n\n");
 
@@ -366,8 +364,8 @@ cout<<("\t########################################################\n\n\n");
 			system("cls");
 			gotoxy(15,2);
 			cout<<("XXXXXXXXXXXXX Saldo Insuficiente XXXXXXXXXXXXX \n \n");
-			cout<<("pressione '1' para fazer a transferência de outro valor ou  '2' se deseja voltar ao menu:\n");
-			cout<<("Seleção:");
+			cout<<("pressione '1' para fazer a transferÃªncia de outro valor ou  '2' se deseja voltar ao menu:\n");
+			cout<<("SeleÃ§Ã£o:");
     		cin>>opc_transferencia;
 
 				switch(opc_transferencia){
@@ -381,7 +379,7 @@ cout<<("\t########################################################\n\n\n");
 				system("cls");
 				gotoxy(25,2);
 			cout<<("----------- ERRO ------------\n \n");
-			cout<<("A opção selecionada não corresponde a nenhum item do menu de opcões\n \n");
+			cout<<("A opÃ§Ã£o selecionada nÃ£o corresponde a nenhum item do menu de opcÃµes\n \n");
 			  tela_transferencia();
 
     }
@@ -394,7 +392,7 @@ cout<<("\t########################################################\n\n\n");
  				  menu_correntista();
 }
 
-// INFORMAÇOES CORRENTISTA
+// INFORMAÃ‡OES CORRENTISTA
 
 void informacoes(){
 int selecao=0;
@@ -405,7 +403,7 @@ cout<<("\t#                 DADOS CADASTRAIS                    #\n");
 cout<<("\t#                                                      #\n");
 cout<<("\t########################################################\n\n\n");
 
-	cout<<"O nome do correntista é:"<<Login.nome_correntista << "\n \n";
+	cout<<"O nome do correntista Ã©:"<<Login.nome_correntista << "\n \n";
 	cout<<"Numero da conta:"<<Login.nconta_cadastro[10] << "\n \n";
 	cout<<("Cliente desde:\n");
 	cout<<system("date/t  \n \n");
@@ -414,8 +412,8 @@ cout<<("\t########################################################\n\n\n");
 	cout<<Login.cpf ;
 	cout<<("\n \n");
 	cout<<"RG de Numero:"<<Login.rg <<"\n \n";
-	cout<<"Deseja altera os dados cadastrais 1- para SIM e 2- Para NÃO\n \n";
-	cout<<("Seleção:");
+	cout<<"Deseja altera os dados cadastrais 1- para SIM e 2- Para NÃƒO\n \n";
+	cout<<("SeleÃ§Ã£o:");
 	cin>>selecao;
 
 	switch(selecao){
@@ -436,7 +434,7 @@ cout<<("\t########################################################\n\n\n");
 				system("cls");
 			gotoxy(25,2);
 			cout<<("----------- ERRO ------------\n \n");
-			cout<<("A opção selecionada não corresponde a nenhum item do menu de opcões\n \n");
+			cout<<("A opÃ§Ã£o selecionada nÃ£o corresponde a nenhum item do menu de opcÃµes\n \n");
 				informacoes();
 				system("cls");
 		 }
@@ -454,8 +452,8 @@ cout<<("\t########################################################\n\n\n");
 
 		cout<<("informe!\n\n");
 		cout<<("1- Para saque em conta corrente:\n \n");
-		cout<<("2- Para saque em conta poupança:\n \n");
-		cout<<("Seleção:");
+		cout<<("2- Para saque em conta poupanÃ§a:\n \n");
+		cout<<("SeleÃ§Ã£o:");
 		cin>>selecao;
 		switch(selecao) {
 
@@ -484,7 +482,7 @@ cout<<("\t########################################################\n\n\n");
 				system("cls");
 		    	gotoxy(15,2);
 			cout<<("----------- ERRO ------------\n \n");
-			cout<<("A opção selecionada não corresponde a nenhum item do menu de opcões\n");
+			cout<<("A opÃ§Ã£o selecionada nÃ£o corresponde a nenhum item do menu de opcÃµes\n");
 			system("pause");
 			system("cls");
 			 saque();
@@ -492,7 +490,7 @@ cout<<("\t########################################################\n\n\n");
 			case 2:
 			system("cls");
 		    gotoxy(15,2);
-			cout<<("----------- Retirada conta poupança ------------\n \n");
+			cout<<("----------- Retirada conta poupanÃ§a ------------\n \n");
 			cout<<("Informe o valor a ser sacado:\n");
 			cout<<("R$");
 			cin>>tmp;
@@ -527,10 +525,10 @@ int tmp=0;
 	cout<<("2- Para Saque:\n \n");
 	cout<<("3- Para Dados cadastrais:\n \n");
 	cout<<("4- Para transferencias:\n \n");
-	cout<<("5- Para Depósito:\n \n");
+	cout<<("5- Para DepÃ³sito:\n \n");
 	cout<<("6- Sair da conta:\n \n");
 	cout<<("7- Fechar Programa:\n \n");
-	cout<<("Seleção:\n");
+	cout<<("SeleÃ§Ã£o:\n");
 	cin>>selecao;
 
 	switch(selecao) {
@@ -565,7 +563,7 @@ int tmp=0;
 			system("cls");
 			gotoxy(25,2);
 			cout<<("----------- ERRO ------------\n \n");
-			cout<<("A opção selecionada não corresponde a nenhum item do menu de opcões\n");
+			cout<<("A opÃ§Ã£o selecionada nÃ£o corresponde a nenhum item do menu de opcÃµes\n");
 			system("pause");
 			system("cls");
 			 menu_correntista();
@@ -580,7 +578,7 @@ int selecao=0;
 			cout<<("1- Para SIM \n \n");
 			cout<<("2- Para ver seu saldo\n \n");
 			cout<<("3- Para encerrar\n \n");
-			cout<<("Seleção:");
+			cout<<("SeleÃ§Ã£o:");
 			cin>>selecao;
 				switch(selecao) {
 
@@ -600,7 +598,7 @@ int selecao=0;
 			system("cls");
 		    gotoxy(25,2);
 			cout<<("----------- ERRO ------------\n \n");
-			cout<<("A opção selecionada não corresponde a nenhum item do menu de opcões\n");
+			cout<<("A opÃ§Ã£o selecionada nÃ£o corresponde a nenhum item do menu de opcÃµes\n");
 			system("pause");
 			system("cls");
 			menu_inicial();
@@ -615,7 +613,7 @@ int selecao=0;
 					cout<<("1- para fazer o saque de outro valor!\n \n");
 					cout<<("2- para verificar seu saldo! \n \n");
 					cout<<("3- Para voltar ao menu!\n \n");
-					cout<<("Seleção:");
+					cout<<("SeleÃ§Ã£o:");
 					cin>>selecao;
     			switch(selecao){
 
